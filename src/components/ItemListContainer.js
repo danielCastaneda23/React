@@ -1,16 +1,18 @@
-import { Component } from "react";
+import { useState } from 'react';
+import ItemCount from './ItemCount';
 
-class ListContainer extends Component {
-    render() {
-        return (
-            <>
-                <div className="container-fluid ">
-                    <div className="row justify-content-center">
-                        <div style={{ color: 'blue' }}>{this.props.greeting}</div>
-                    </div>
-                </div>
-            </>
-        )
+const ListContainer = (props) => {
+    const [stockActual,setstockActual] = useState(10)
+    const restaStock = (e, RestaValor) => {
+        setstockActual((stockActual-RestaValor)<0 ? stockActual : stockActual-RestaValor)
     }
+    return (
+        <>
+            <div className="container-fluid ">
+                <div className="row mx-0 justify-content-center"> <div style={{ color: 'blue' }}>{props.greeting}</div></div>
+                <ItemCount stock={stockActual} initial={1} onAdd={restaStock} />
+            </div>
+        </>
+    )
 }
 export default ListContainer;

@@ -1,8 +1,8 @@
-import React, { Component } from "react";
-import { NavBar, Nav, NavbarBrand } from 'react-bootstrap';
+import React, {Component} from "react";
+import {Nav} from 'react-bootstrap';
 import IconoFinal from './CartWidget';
 
-class Navbar extends Component {
+export default class Navbar extends Component {
     render() {
         return (
             <Nav
@@ -29,6 +29,4 @@ class Navbar extends Component {
             </Nav>
         )
     }
-};
-
-export default Navbar;
+}
