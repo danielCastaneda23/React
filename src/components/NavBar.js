@@ -13,7 +13,7 @@ export default class Navbar extends Component {
                     <IconoFinal />
                 </Nav.Item>
                 <Nav.Item>
-                    <Nav.Link href="/home">Primero</Nav.Link>
+                    <Nav.Link href="/">Primero</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
                     <Nav.Link eventKey="link-1">Segundo</Nav.Link>
