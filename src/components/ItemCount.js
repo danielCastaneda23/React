@@ -12,7 +12,7 @@ const ItemCount = (props) => {
                 <Form>
                     <Form.Group>
                         <Form.Label>Stock total: {props.stock}</Form.Label>
-                        <Form.Control className="text-center" type="text" value={valorDigitado}></Form.Control>
+                        <Form.Control className="text-center" type="text" value={valorDigitado} onChange={() =>''}></Form.Control>
                     </Form.Group>
                     <Button variant="dark" onClick={(e) => (props.onAdd(e, valorDigitado))}>Agregar </Button>
                 </Form>

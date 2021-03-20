@@ -1,6 +1,4 @@
 import ItemList from './ItemList';
-
-
 const ListContainer = (props) => {
     return (
         <>

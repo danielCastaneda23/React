@@ -4,6 +4,7 @@ import ItemListContainer from '../src/components/ItemListContainer';
 import ItemDetail from '../src/components/ItemDetail'
 import { useEffect, useState } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import ItemDetailContainer from './components/ItemDetailContainer';
 
 const App = () => {
     const [item, setItem] = useState([])
@@ -11,12 +12,7 @@ const App = () => {
         fetch('https://api.mercadolibre.com/sites/MCO/search?category=MCO180800')
             .then((respuesta) => respuesta.json())
             .then((respuesta) => setItem(respuesta.results))
-        // new Promise((Bien,Mal) => {
-        //     setTimeout(() => {
-        //         Bien({id:"346556473",cel:"Titulo",title:"$3500",pictturE:":)"});
-        //     },2000)
-        // }).then((resultado) => setItem(resultado))
-    }, []);
+    },[]);
 
 
     return (
@@ -27,8 +23,9 @@ const App = () => {
                     <Route exact path="/">
                         <ItemListContainer items={item} />
                     </Route>
-                    <Route path="/new">
-                        <ItemDetail />
+                    <Route exact path="/item/:id?">
+                        <ItemDetailContainer informationDetail={item} />
+                        {console.log('renderizo App', item)}
                     </Route>
                 </Switch>
             </BrowserRouter>
