@@ -15,7 +15,7 @@ const Item = (props) => {
         <Card style={{ width: '300px', marginLeft: '30px' }}>
             <Card.Img variant="top" src={props.item.thumbnail} alt=":)" height="200px" />
             <Card.Body>
-            <Link to={`/item/${props.item.id}`} className="text-dark"><Card.Title>{props.item.title}</Card.Title></Link>
+                <Link to={`/item/${props.item.id}`} className="text-dark"><Card.Title>{props.item.title}</Card.Title></Link>
                 <Card.Text>Precio: ${props.item.price}</Card.Text>
                 <ItemCount stock={stockActual} initial={1} onAdd={restaStock} />            </Card.Body>
         </Card>
