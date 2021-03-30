@@ -27,7 +27,7 @@ const ItemDetailContainer = (props) => {
         <>
             <div className="row mx-0 justify-content-center">
                 <ItemDetail information={item}/>
-                {console.log('renderizo ItemDetailContainer', props.information)}
+                {console.log('renderizo ItemDetailContainer')}
             </div>
         </>
     )

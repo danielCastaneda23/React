@@ -16,9 +16,13 @@ export default class Navbar extends Component {
                     <Nav.Link href="/">Home</Nav.Link>
                 </Nav.Item>
                 <NavDropdown title="Categories" id="basic-nav-dropdown">
-                    <NavDropdown.Item><Link to={`/category/MCO-SURGICAL_MASKS`}>Tapabocas</Link> </NavDropdown.Item>
-                    <NavDropdown.Item><Link to={`/category/MCO-THERMOMETERS`}>Termometros</Link></NavDropdown.Item>
-                    <NavDropdown.Item href="/">All</NavDropdown.Item>
+                    <div>
+                    <Link to={`/category/MCO-SURGICAL_MASKS`} className="mx-3"> Tapabocas</Link>
+                    </div>
+                    <div>
+                    <Link to={`/category/MCO-THERMOMETERS`} className="mx-3"> Termometros</Link>
+                    </div>
+                    <Nav.Link href="/">All</Nav.Link>
                 </NavDropdown>
             </Nav>
         )

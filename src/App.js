@@ -27,6 +27,7 @@ const App = () => {
                     </Route>
                     <Route exact path="/item/:id?">
                         <ItemDetailContainer information={item}/>
+                        {console.log('Renderizo App')}
                     </Route>
                     <Route exact path="/category/:id?">
                         <ItemListContainer items={item} />
