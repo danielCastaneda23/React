@@ -1,9 +1,8 @@
 import { useState } from "react"
 import ItemDetail from "./ItemDetail"
-import { Button, Nav } from "react-bootstrap";
-import { Link } from "react-router-dom";
+
 import { useEffect } from "react";
-import { useParams, useLocation } from "react-router-dom"
+import { useParams} from "react-router-dom"
 
 const ItemDetailContainer = (props) => {
     let { id } = useParams();
@@ -15,7 +14,7 @@ const ItemDetailContainer = (props) => {
             .then((respuesta) => {
                 let ArrayDisplay = []
                 for (let i = 0; i < respuesta.length; i++) {
-                    if (respuesta[i].id == id) {
+                    if (respuesta[i].id === id) {
                         ArrayDisplay.push(respuesta[i].title, respuesta[i].thumbnail, respuesta[i].price);
                     }
                 }
@@ -27,7 +26,6 @@ const ItemDetailContainer = (props) => {
         <>
             <div className="row mx-0 justify-content-center">
                 <ItemDetail information={item}/>
-                {console.log('renderizo ItemDetailContainer')}
             </div>
         </>
     )

@@ -1,30 +1,34 @@
-import React, { Component } from "react";
+import React from "react";
 import { Nav, NavDropdown } from 'react-bootstrap';
 import { Link } from "react-router-dom";
 import IconoFinal from './CartWidget';
 
-export default class Navbar extends Component {
-    render() {
-        return (
-            <Nav
-                activeKey="/"
-            >
-                <Nav.Item>
-                    <IconoFinal />
-                </Nav.Item>
-                <Nav.Item>
-                    <Nav.Link href="/">Home</Nav.Link>
-                </Nav.Item>
-                <NavDropdown title="Categories" id="basic-nav-dropdown">
-                    <div>
+
+const Navbar = () => {
+
+    return (
+        <Nav
+            activeKey="/" className="fixed-top"
+        >
+            <Nav.Item className="mt-2 ml-2">
+                <Link to={`/category/1`} >Home</Link>
+            </Nav.Item>
+            <NavDropdown title="Categories" id="basic-nav-dropdown">
+                <div>
                     <Link to={`/category/MCO-SURGICAL_MASKS`} className="mx-3"> Tapabocas</Link>
-                    </div>
-                    <div>
+                </div>
+                <div>
                     <Link to={`/category/MCO-THERMOMETERS`} className="mx-3"> Termometros</Link>
-                    </div>
-                    <Nav.Link href="/">All</Nav.Link>
-                </NavDropdown>
-            </Nav>
-        )
-    }
+                </div>
+                <div>
+                    <Link  to={`/category/1`} className="mx-3">All</Link>
+                </div>
+            </NavDropdown>
+            <Nav.Item className="mt-2">
+                <IconoFinal />
+                <b>Elementos en carro: </b>
+            </Nav.Item>
+        </Nav>
+    )
 }
+export default Navbar
