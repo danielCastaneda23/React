@@ -1,11 +1,20 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Nav, NavDropdown } from 'react-bootstrap';
 import { Link } from "react-router-dom";
+import ThemeContext from "../context/cartContext";
 import IconoFinal from './CartWidget';
 
 
 const Navbar = () => {
-
+    const [total2, setTotal2] = useState(0)
+    const { cart, setCar } = useContext(ThemeContext)
+    useEffect(() => {
+        let x = 0;
+        for (let i = 0; i < cart.length; i++) {
+            x = x + cart[i].quantity
+        }
+        setTotal2(x)
+    }, [cart]);
     return (
         <div className="row mx-0">
             <Nav activeKey="/" className="fixed-top bg-dark text-white">
@@ -24,12 +33,13 @@ const Navbar = () => {
                     </div>
                 </NavDropdown>
                 <Nav.Item className="ml-auto pr-5 pt-2" >
+                    {cart.length === 0 ? <></> : <>
                         <IconoFinal />
-                        <b>Elementos en carro: </b>
+                        <b>Elementos en carro: {total2}</b></>}
                 </Nav.Item>
 
             </Nav>
-            </div>
+        </div>
     )
 }
 export default Navbar
