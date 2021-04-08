@@ -17,7 +17,7 @@ const App = () => {
 
 
     return (
-        <div className="mt-3">
+        <div className="container-fluid ">
             <ThemeContext.Provider value={{cart, setCart}}>
                 <BrowserRouter>
                     <Navbar />

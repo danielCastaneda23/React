@@ -26,7 +26,7 @@ const Item = (props) => {
                 {stockActual<=0 ? <div className="text-center"><b> No Hay Stock Suficiente: (10 productos)</b></div> :<ItemCount stock={stockActual} initial={1} onAdd={restaStock} /> }
                 {/* {stateButton ? <div className="text-center mt-3"><Button variant="dark" onClick={() => context.addCar(addToCar)}><Link to={`/cart`} className="text-white">TERMINAR COMPRA</Link> </Button></div> : null} */}
                 {/* {stateButton ? <div className="text-center mt-3"><Button variant="dark" onClick={() => context.push({item: {img: props.item.thumbnail, title:props.item.title, price:props.item.price}, quantity: addToCar})}><Link to={`/cart`} className="text-white">TERMINAR COMPRA</Link> </Button></div> : null} */}
-                {stateButton ? <div className="text-center mt-3"><Button variant="dark" onClick={() => setCart([...cart, {item: {img: props.item.thumbnail, title:props.item.title, price:props.item.price }, quantity: addToCar}])}><Link to={`/cart`} className="text-white">TERMINAR COMPRA</Link> </Button></div> : null}
+                {stateButton ? <div className="text-center mt-3"><Link to={`/cart`} className="text-white"><Button variant="dark" onClick={() => setCart([...cart, {item: {img: props.item.thumbnail, title:props.item.title, price:props.item.price, id: props.item.id }, quantity: addToCar}])}>TERMINAR COMPRA</Button></Link></div> : null}
                 </Card.Body>
         </Card>
     )
