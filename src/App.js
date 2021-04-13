@@ -6,6 +6,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import ItemDetailContainer from './components/ItemDetailContainer';
 import ThemeContext from './context/cartContext';
 import Cart from './components/Cart';
+import {getFirestore} from './configs/firebase'
 const App = () => {
     const [item, setItem] = useState([]);
     const [cart, setCart] = useState([]);
@@ -13,6 +14,12 @@ const App = () => {
         fetch('https://api.mercadolibre.com/sites/MCO/search?category=MCO180800')
             .then((respuesta) => respuesta.json())
             .then((respuesta) => setItem(respuesta.results))
+        const db= getFirestore();
+        const categoriasCollection = db.collection('categorias')
+        categoriasCollection.get().then((resp) => {
+            if (resp.size === 0) console.log('sin datos')
+            resp.docs.map((x) => console.log({id: x.id, ...x.data()}))
+        })
     }, []);
 
 

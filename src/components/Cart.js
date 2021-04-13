@@ -1,9 +1,8 @@
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect } from 'react';
 import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import ThemeContext from "../context/cartContext";
 const Cart = () => {
-    const [totalPrice, setTotalPrice] = useState(0)
     const { cart, setCart } = useContext(ThemeContext)
     let total = 0;
     let contador = 0;
