@@ -37,10 +37,10 @@ const Item = (props) => {
         })
     }
     return (
-        <Card style={{ width: '300px', marginLeft: '30px' }}>
-            <Card.Img variant="top" src={props.item.thumbnail} alt=":)" height="200px" />
+        <Card style={{ width: '230px' }}>
+            <Card.Img variant="top" src={props.item.thumbnail} alt=":)" height="100px" />
             <Card.Body>
-                <Link to={`/item/${props.item.id}`} className="text-dark"><Card.Title>{props.item.title}</Card.Title></Link>
+                <Link to={`/item/${props.item.id}`} className="text-dark"><Card.Title className="h6">{props.item.title}</Card.Title></Link>
                 <Card.Text>Precio: ${props.item.price}</Card.Text>
                 {stockActual <= 0 ? <div className="text-center"><b> No Hay Stock Suficiente: (10 productos)</b></div> : <ItemCount stock={stockActual} initial={1} onAdd={restaStock} />}
                 {/* {stateButton ? <div className="text-center mt-3"><Button variant="dark" onClick={() => context.addCar(addToCar)}><Link to={`/cart`} className="text-white">TERMINAR COMPRA</Link> </Button></div> : null} */}

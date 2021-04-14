@@ -22,7 +22,7 @@ const ItemDetail = (props) => {
     return (
 
         <>
-            <Card style={{ width: '1000px', marginTop: '200px' }}>
+            <Card style={{ width: '800px', marginTop: '200px' }}>
                 <Card.Img variant="top" src={props.information[1]} alt=":)" height="500px" />
                 <Card.Body>
                     <Card.Title>{props.information[0]}</Card.Title>

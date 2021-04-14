@@ -7,6 +7,8 @@ import ItemDetailContainer from './components/ItemDetailContainer';
 import ThemeContext from './context/cartContext';
 import Cart from './components/Cart';
 import {getFirestore} from './configs/firebase'
+import CartRoute from './components/CartRoute';
+
 const App = () => {
     const [item, setItem] = useState([]);
     const [cart, setCart] = useState([]);
@@ -37,6 +39,9 @@ const App = () => {
                         </Route>
                         <Route exact path="/cart">
                             <Cart/>
+                        </Route>
+                        <Route exact path="/cart/form">
+                            <CartRoute/>
                         </Route>
                     </Switch>
                 </BrowserRouter>

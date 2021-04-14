@@ -23,7 +23,7 @@ const Navbar = () => {
                 </Nav.Item>
                 <NavDropdown title="Categories" id="basic-nav-dropdown">
                     <div>
-                        <Link to={`/category/MCO-SURGICAL_MASKS`} className="mx-3"> Tapabocas</Link>
+                        <Link to={`/category/MCO-SURGICAL_AND_INDUSTRIAL_MASKS`} className="mx-3"> Tapabocas</Link>
                     </div>
                     <div>
                         <Link to={`/category/MCO-THERMOMETERS`} className="mx-3"> Termometros</Link>
@@ -34,7 +34,7 @@ const Navbar = () => {
                 </NavDropdown>
                 <Nav.Item className="ml-auto pr-5 pt-2" >
                     {cart.length === 0 ? <></> : <>
-                        <IconoFinal />
+                        <Link to={`/cart`}><IconoFinal /></Link>
                         <b>Elementos en carro: {total2}</b></>}
                 </Nav.Item>
 

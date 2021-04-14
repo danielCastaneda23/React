@@ -56,7 +56,7 @@ const Cart = () => {
         <hr style={{ width: '90%', height: '1px', backgroundColor: '#666', marginTop: '80px' }}></hr>
         <div className="row mx-0">
             <div className="col-4"></div>
-            <div className="col-4"></div>
+            <div className="col-4 text-center"><Link to={`/cart/form`}><Button variant="btn btn-primary">FINALIZAR COMPRA</Button></Link></div>
             <div className="col-4 text-center"> <b>Precio total: {total}  </b></div>
         </div> </>: <>
         <div className=" h1 row mx-0 mt-5 pt-5 bold justify-content-center">EL CARRITO SE ENCUENTRA VACIO</div>

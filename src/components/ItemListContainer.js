@@ -4,7 +4,7 @@ const ListContainer = (props) => {
     let { id } = useParams();
     return (
         <>
-            <div className="row mx-0"><ItemList item={props.items} idCategory={id} /></div>
+            <div className="row mx-0 mt-5"><ItemList item={props.items} idCategory={id} /></div>
         </>
     )
 }
