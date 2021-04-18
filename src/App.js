@@ -6,42 +6,49 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import ItemDetailContainer from './components/ItemDetailContainer';
 import ThemeContext from './context/cartContext';
 import Cart from './components/Cart';
-import {getFirestore} from './configs/firebase'
+import { getFirestore } from './configs/firebase'
 import CartRoute from './components/CartRoute';
+
 
 const App = () => {
     const [item, setItem] = useState([]);
     const [cart, setCart] = useState([]);
+    
     useEffect(() => {
         fetch('https://api.mercadolibre.com/sites/MCO/search?category=MCO180800')
             .then((respuesta) => respuesta.json())
             .then((respuesta) => setItem(respuesta.results))
-        const db= getFirestore();
+        const db = getFirestore();
         const categoriasCollection = db.collection('categorias')
         categoriasCollection.get().then((resp) => {
             if (resp.size === 0) console.log('sin datos')
-            resp.docs.map((x) => console.log({id: x.id, ...x.data()}))
+            resp.docs.map((x) => console.log({ id: x.id, ...x.data() }))
         })
     }, []);
 
 
     return (
-        <div className="container-fluid ">
-            <ThemeContext.Provider value={{cart, setCart}}>
+        <div className="container-fluid px-0 ">
+            <div className="row justify-content-center bg-dark px-2 py-2 h5" style={{ color: 'rgb(24,192,191)' }}> CONTRAENTREGA EN GRAN PARTE DEL PAIS</div>
+            <ThemeContext.Provider value={{ cart, setCart}}>
                 <BrowserRouter>
                     <Navbar />
+
                     <Switch>
                         <Route exact path="/category/:id?">
+                            <ItemListContainer items={item} />
+                        </Route>
+                        <Route exact path="/">
                             <ItemListContainer items={item} />
                         </Route>
                         <Route exact path="/item/:id?">
                             <ItemDetailContainer information={item} />
                         </Route>
                         <Route exact path="/cart">
-                            <Cart/>
+                            <Cart />
                         </Route>
                         <Route exact path="/cart/form">
-                            <CartRoute/>
+                            <CartRoute />
                         </Route>
                     </Switch>
                 </BrowserRouter>

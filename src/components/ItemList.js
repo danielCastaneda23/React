@@ -9,14 +9,14 @@ const ItemList = (props) => {
         props.item.map((x) => {
             if (x.domain_id === newId) {
                 return (
-                    <div className="col-2 px-0 my-4">
+                    <div className="col-3 mx-n4">
                         <Item item={x} />
                     </div>
                 )
             }
             if (newId === '1'){
                 return (
-                    <div className="col-2 px-0 my-4">
+                    <div className="col-3 mx-n4">
                         <Item item={x} />
                     </div>
                 )

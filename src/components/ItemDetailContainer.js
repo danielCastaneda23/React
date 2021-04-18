@@ -15,7 +15,7 @@ const ItemDetailContainer = (props) => {
                 let ArrayDisplay = []
                 for (let i = 0; i < respuesta.length; i++) {
                     if (respuesta[i].id === id) {
-                        ArrayDisplay.push(respuesta[i].title, respuesta[i].thumbnail, respuesta[i].price, respuesta[i].id);
+                        ArrayDisplay.push(respuesta[i].title, respuesta[i].thumbnail, respuesta[i].price, respuesta[i].id ,respuesta[i].available_quantity);
                     }
                 }
                 return (ArrayDisplay)
